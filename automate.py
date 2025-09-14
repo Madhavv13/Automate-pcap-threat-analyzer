@@ -8,18 +8,28 @@ import os
 import json
 import matplotlib.pyplot as plt
 from collections import Counter
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # === Config ===
 RESULTS_DIR = r"E:\html\Cyber\pcap-lab\results"
-ALERT_EMAIL = "madhavvviswanath@gmail.com"
-SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 587
-SMTP_USER = "madhavvviswanath@gmail.com"
-SMTP_PASS = "fpsd nzmk psim llnn"   # Gmail App Password
+ALERT_EMAIL = os.getenv('ALERT_EMAIL')
+SMTP_SERVER = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
+SMTP_PORT = int(os.getenv('SMTP_PORT', '587'))
+SMTP_USER = os.getenv('SMTP_USER')
+SMTP_PASS = os.getenv('SMTP_PASS')
 
 # VirusTotal API
-VT_API_KEY = "ef52e228de3ed4fef2cabc2a09644d63b9a0f59a7770e0f4db4d816821c9cbc7"
+VT_API_KEY = os.getenv('VT_API_KEY')
 VT_URL = "https://www.virustotal.com/api/v3/ip_addresses/{}"
+
+# Validate required environment variables
+required_vars = ['ALERT_EMAIL', 'SMTP_USER', 'SMTP_PASS', 'VT_API_KEY']
+missing_vars = [var for var in required_vars if not os.getenv(var)]
+if missing_vars:
+    raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
 
 
 def send_email_alert(subject, body_html, images):
