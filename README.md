@@ -1,7 +1,7 @@
 # 🚀 PCAP Threat Analyzer
 
 ![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 
 A powerful automated threat analysis tool for PCAP files that detects suspicious network activities, analyzes potential security threats, and generates detailed reports with visualizations.
 
