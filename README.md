@@ -62,24 +62,6 @@ The analyzer generates:
 - Top malicious IP addresses
 - Detailed threat categorization
 
-## 🛡️ Security Note
 
-- Never commit your API keys or sensitive credentials
-- Use environment variables for production deployment
-- Review the `.gitignore` file to prevent accidental commits of sensitive data
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📧 Contact
-
-For any queries or suggestions, please open an issue or contact [Madhav Viswanath](mailto:madhavvviswanath@gmail.com).
-
----
-
-Made with ❤️ by [Madhav Viswanath](https://github.com/Madhavv13)
